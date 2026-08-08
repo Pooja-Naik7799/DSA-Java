@@ -1,0 +1,31 @@
+ minimu no of opeartions i need to take to sort the array ex a={5,2,2,3} op=8
+//For every element, I compare it with the element immediately before it.
+
+If the current element is already greater than or equal to the previous element, nothing needs to be done.
+If the current element is smaller than the previous element, I have no choice but to increase the current element until it becomes equal to the previous element.
+
+The number of operations needed is simply:
+
+previous value − current value
+
+After increasing the current element, I treat its new value as the previous value for the next element.
+public class Main
+{
+	public static void main(String[] args) {
+	   // Scanner sc=new Scanner(System.in);
+	    
+	    int []a={5,2,2,3};
+	    int prev=0;
+	    int curr=1;int op=0;
+	    while(curr<a.length){
+	    if(a[curr]<a[prev]){
+	        op+=a[prev]-a[curr];
+	        a[curr]=a[prev];
+	    }
+	    prev++;
+	    curr++;
+	    
+	    }
+		System.out.println(op);
+	}
+}
